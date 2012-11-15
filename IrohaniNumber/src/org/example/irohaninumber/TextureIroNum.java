@@ -264,14 +264,22 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 
         	// 裏側を向いている間にテクスチャを変更
 			if(angle[i] == 180.0f) {
-        		texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.iroha_ok);
-        	} else if(angle[i] >= 360.0f) {
+				if(level == 4) {
+					texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.question);
+				} else {
+					texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.marriage);
+				}
+			} else if(angle[i] >= 360.0f) {
         		addAngle[i] = 0.0f;
         	}
 			angle[i] += addAngle[i];
 
         	// テクスチャの描画
-			TextureDrawer.drawTexture(gl, texID[i],  x, y, texsize, texsize, angle[i], 0.9f, 0.9f, iroID[i]);
+			if(angle[i] < 180.0f) {
+				TextureDrawer.drawTexture(gl, texID[i],  x, y, texsize, texsize, angle[i], 0.9f, 0.9f, iroID[i]);
+			} else {
+				TextureDrawer.drawTexture(gl, texID[i],  x, y, texsize, texsize, angle[i], 0.9f, 0.9f, i);
+			}
     	}
     }
 
@@ -400,7 +408,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 
     	// リソース読み込み
     	for(int i = 0; i < level*level; i++) {
-    		texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.iroha);
+    		texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.number);
     	}
     	backgroundID = TextureLoader.loadTexture(gl, this, R.drawable.game_background);
     	ready1ID = TextureLoader.loadTexture(gl, this, R.drawable.ready1);
