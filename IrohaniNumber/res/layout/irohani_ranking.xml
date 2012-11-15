@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/ranking_background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/titleView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="48dp"
+        tools:context=".IrohaniNumber" />
+
+    <TextView
+        android:id="@+id/timeView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleView1"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        tools:context=".IrohaniNumber" />
+
+    <ListView
+        android:id="@+id/rankListView1"
+        android:layout_width="match_parent"
+        android:layout_height="319dp"
+        android:layout_alignParentLeft="true"
+        android:scrollingCache="false"
+        android:background="@color/cream"
+        android:layout_below="@+id/timeView1" >
+    </ListView>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rankListView1"
+        android:text="タイトルに戻る" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:myapp="http://schemas.android.com/apk/res/org.example.irohaninumber"
+        android:id="@+id/linearLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/back" >
+    </LinearLayout>
+
+</RelativeLayout>
