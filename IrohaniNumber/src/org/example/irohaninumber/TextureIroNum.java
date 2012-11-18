@@ -71,8 +71,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private long finishStartTime;
 	private long finishEndTime;
 	private long finishTime;
-	private int finish1ID;
-	private int finish2ID;
+	private int yesID;
+	private int noID;
 	private int finishMove;
 	private float finishScale;
 	// サウンドID
@@ -80,6 +80,10 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private int semistake;
 	private int secomplete;
 	private int volume;
+	// yes,noのボタン
+	private float yes_x;
+	private float no_x;
+	private float yn_y;
 
 	public TextureIroNum() {
 		sec = 0;
@@ -257,7 +261,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     				addAngle[i] = 20.0f;
     				touchNum++;
     			}
-    			*/
+				*/
     			touchX = 0.0f;
     			touchY = 0.0f;
     		}
@@ -292,29 +296,29 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     		finishEndTime = System.currentTimeMillis();
     	}
     	if (finishEndTime - finishStartTime > 800) {
-    		TextureDrawer.drawTexture(gl, finish1ID, finishMove, 64, 128, 128, 0.0f, finishScale, finishScale);
-    		TextureDrawer.drawTexture(gl, finish2ID, width - finishMove, 64, 128, 128, 0.0f, finishScale, finishScale);
-    		if (finishMove <= width/2 - 64 && finishScale >= 0.5f) {
-        		// 文字が小さくなっていく速度
-    			finishScale -= 0.03f;
-        		// 左右から中心に向かって移動する速度
-    			finishMove += 5;
-    		}
-    	}
-    	// 3秒経ったらランキング画面に遷移
-    	if(finishEndTime - finishStartTime > 2500) {
-			// サウンドプールを開放
-    		soundPool.release();
+    		yes_x = (float)(64+texX);
+    		no_x = (float)(width-texX-64);
+    		yn_y = (float)(-texsize*level-texsize/2+texY);
+    		TextureDrawer.drawTexture(gl, yesID, yes_x, yn_y, 128, 128, 0.0f, 1.0f, 1.0f);
+    		TextureDrawer.drawTexture(gl, noID, no_x, yn_y, 128, 128, 0.0f, 1.0f, 1.0f);
     		if(level > 3) {
     			// インテントのインスタンス生成
-    			Intent intent = new Intent(TextureIroNum.this, IrohaniRanking.class);
-    			intent.putExtra("SCORE", finishTime);
-    			intent.putExtra("LEVEL", level);
-    			// 次画面のアクティビティ起動
-    			startActivity(intent);
-    			finish();
+    			if(yes_x - 64 < touchX && touchX < yes_x + 64 && yn_y - 32 < touchY && touchY < yn_y + 32) {
+    				// サウンドプールを開放
+    				soundPool.release();
+    				Intent intent = new Intent(TextureIroNum.this, IrohaniRanking.class);
+    				intent.putExtra("SCORE", finishTime);
+    				intent.putExtra("LEVEL", level);
+    				// 次画面のアクティビティ起動
+    				startActivity(intent);
+    				finish();
+    			} else if(no_x - 64 < touchX && touchX < no_x + 64 && yn_y - 32 < touchY && touchY < yn_y + 32) {
+    				// サウンドプールを開放
+    				soundPool.release();
+    				finish();
+    			}
     		} else {
-        		// 練習だったらランキング画面に行かずに終了
+    			// 練習だったらランキング画面に行かずに終了
     			finish();
     		}
     	}
@@ -413,8 +417,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     	backgroundID = TextureLoader.loadTexture(gl, this, R.drawable.game_background);
     	ready1ID = TextureLoader.loadTexture(gl, this, R.drawable.ready1);
     	ready2ID = TextureLoader.loadTexture(gl, this, R.drawable.ready2);
-    	finish1ID = TextureLoader.loadTexture(gl, this, R.drawable.finish1);
-    	finish2ID = TextureLoader.loadTexture(gl, this, R.drawable.finish2);
+    	yesID = TextureLoader.loadTexture(gl, this, R.drawable.yes);
+    	noID = TextureLoader.loadTexture(gl, this, R.drawable.no);
 
         // 文字列を生成
         if (labels != null) {
