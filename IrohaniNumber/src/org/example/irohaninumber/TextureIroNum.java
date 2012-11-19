@@ -81,6 +81,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private int secorrect;
 	private int semistake;
 	private int secomplete;
+	private int segift;
 	private int volume;
 	// yes,noのボタン
 	private float yes_x;
@@ -118,6 +119,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
         secorrect = soundPool.load(context, R.raw.secorrect, 1);
         semistake = soundPool.load(context, R.raw.semistake, 1);
         secomplete = soundPool.load(context, R.raw.secomplete, 1);
+        segift = soundPool.load(context, R.raw.segift, 1);
 
         // ウィンドウマネージャのインスタンス取得
         WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
@@ -311,6 +313,9 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     				if(level == 5) {
     					gameState = GIFT;
     					TextureDrawer.drawTexture(gl, giftID, width/2, height-finishMove, 512, 512, 0.0f, 1.0f, 1.0f);
+    					if(finishMove == 0) {
+    						soundPool.play(segift, (float)volume, (float)volume, 0, 0, 1.0f);
+    					}
     					if(finishMove < height/2) {
     						finishMove+=5;
     					}
