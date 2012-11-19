@@ -66,6 +66,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private final int READY = 0;
 	private final int PLAYING = 1;
 	private final int END = 2;
+	private final int GIFT = 3;
 	private int gameState = READY;
 	// 「終了」時
 	private long finishStartTime;
@@ -75,6 +76,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private int noID;
 	private int finishMove;
 	private float finishScale;
+	private int giftID;
 	// サウンドID
 	private int secorrect;
 	private int semistake;
@@ -189,8 +191,10 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     	if(gameState == READY) {
     		readyDraw(gl);
     	} else {
-    		irohaDraw(gl);
-    		if (gameState == END) {
+    		if(gameState == PLAYING || gameState == END) {
+    			irohaDraw(gl);
+    		}
+    		if (gameState == END || gameState == GIFT) {
         		endDraw(gl);
     		}
     	}
@@ -304,14 +308,22 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     		if(level > 3) {
     			// インテントのインスタンス生成
     			if(yes_x - 64 < touchX && touchX < yes_x + 64 && yn_y - 32 < touchY && touchY < yn_y + 32) {
-    				// サウンドプールを開放
-    				soundPool.release();
-    				Intent intent = new Intent(TextureIroNum.this, IrohaniRanking.class);
-    				intent.putExtra("SCORE", finishTime);
-    				intent.putExtra("LEVEL", level);
-    				// 次画面のアクティビティ起動
-    				startActivity(intent);
-    				finish();
+    				if(level == 5) {
+    					gameState = GIFT;
+    					TextureDrawer.drawTexture(gl, giftID, width/2, height-finishMove, 512, 512, 0.0f, 1.0f, 1.0f);
+    					if(finishMove < height/2) {
+    						finishMove+=5;
+    					}
+    				} else {
+    					// サウンドプールを開放
+    					soundPool.release();
+    					Intent intent = new Intent(TextureIroNum.this, IrohaniRanking.class);
+    					intent.putExtra("SCORE", finishTime);
+    					intent.putExtra("LEVEL", level);
+    					// 次画面のアクティビティ起動
+    					startActivity(intent);
+    					finish();
+    				}
     			} else if(no_x - 64 < touchX && touchX < no_x + 64 && yn_y - 32 < touchY && touchY < yn_y + 32) {
     				// サウンドプールを開放
     				soundPool.release();
@@ -419,6 +431,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     	ready2ID = TextureLoader.loadTexture(gl, this, R.drawable.ready2);
     	yesID = TextureLoader.loadTexture(gl, this, R.drawable.yes);
     	noID = TextureLoader.loadTexture(gl, this, R.drawable.no);
+    	giftID = TextureLoader.loadTexture(gl, this, R.drawable.gift);
 
         // 文字列を生成
         if (labels != null) {
