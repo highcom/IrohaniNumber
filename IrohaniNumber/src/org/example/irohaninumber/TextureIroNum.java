@@ -31,6 +31,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 
 	// 読み込んだテクスチャのID
 	private int[] texID;
+	private int questionID;
+	private int marriageID;
 	private int[] iroID;
 	private int level;
 	private int width;
@@ -275,9 +277,9 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
         	// 裏側を向いている間にテクスチャを変更
 			if(angle[i] == 180.0f) {
 				if(level == 4) {
-					texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.question);
+					texID[i] = questionID;
 				} else {
-					texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.marriage);
+					texID[i] = marriageID;
 				}
 			} else if(angle[i] >= 360.0f) {
         		addAngle[i] = 0.0f;
@@ -428,8 +430,9 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     	gl.glShadeModel(GL10.GL_FLAT);
 
     	// リソース読み込み
-    	for(int i = 0; i < level*level; i++) {
-    		texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.number);
+		texID[0] = TextureLoader.loadTexture(gl, this, R.drawable.number);
+    	for(int i = 1; i < level*level; i++) {
+    		texID[i] = texID[0];
     	}
     	backgroundID = TextureLoader.loadTexture(gl, this, R.drawable.game_background);
     	ready1ID = TextureLoader.loadTexture(gl, this, R.drawable.ready1);
@@ -444,6 +447,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
         } else {
             labels = new LabelMaker(true, 256, 128);
         }
+        questionID = TextureLoader.loadTexture(gl, this, R.drawable.question);
+        marriageID = TextureLoader.loadTexture(gl, this, R.drawable.marriage);
         labels.initialize(gl);
         labels.beginAdding(gl);
         labelTIME = labels.add(gl, "じかん:", labelPaint);
