@@ -8,6 +8,41 @@ import java.nio.IntBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
 public class TextureDrawer {
+	private static IntBuffer intbuffer;
+	private static FloatBuffer[] floatbuffer;
+	private static float tex_h = 0.125f;
+	private static float tex_w = 0.125f;
+	private static float u;
+	private static float v;
+
+	// 固定小数点値で1.0
+	private static int one = 0x10000;
+
+	static void TextureDrawerInit(int level, int texsize, int[] iroID)
+	{
+		// 頂点座標
+		int vertices[] = {
+				-texsize*one/2, -texsize*one/2, 0,
+				texsize*one/2, -texsize*one/2, 0,
+				-texsize*one/2, texsize*one/2, 0,
+				texsize*one/2, texsize*one/2, 0,
+		};
+		intbuffer = makeIntBuffer(vertices);
+
+		// テクスチャ座標配列
+		floatbuffer = new FloatBuffer[level*level];
+		for(int i = 0; i < level*level; i++) {
+			u = (float)(iroID[i] % 6) * 0.125f;
+			v = (float)(iroID[i] / 6) * 0.125f;
+			float coords[] = {
+					u,				 v + tex_h,
+					u + tex_w, v + tex_h,
+					u,				 v,
+					u + tex_w, v,
+			};
+			floatbuffer[i] = makeFloatBuffer(coords);
+		}
+	}
 	/**
 	 * 	2Dテクスチャを描画する
 	 * @param gl
@@ -18,30 +53,6 @@ public class TextureDrawer {
 	 */
 	static void drawTexture(GL10 gl, int tex_id, float x, float y, int width, int height, float angle, float scale_x, float scale_y, int number)
 	{
-		float tex_h = 0.125f;
-		float tex_w = 0.125f;
-		float u = (float)(number % 6) * 0.125f;
-		float v = (float)(number / 6) * 0.125f;
-
-		// 固定小数点値で1.0
-		int one = 0x10000;
-
-		// 頂点座標
-		int vertices[] = {
-				-width*one/2, -height*one/2, 0,
-				width*one/2, -height*one/2, 0,
-				-width*one/2, height*one/2, 0,
-				width*one/2, height*one/2, 0,
-		};
-
-		// テクスチャ座標配列
-		float coords[] = {
-		        u,				 v + tex_h,
-		        u + tex_w, v + tex_h,
-		        u,				 v,
-		        u + tex_w, v,
-		};
-
 		// 頂点配列を使う事を宣言
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		// テクスチャ座標配列を使う事を宣言
@@ -76,10 +87,10 @@ public class TextureDrawer {
 		// 色をセット
 		gl.glColor4x(0x10000, 0x10000, 0x10000, 0x10000);
 		// 頂点座標配列をセット
-		gl.glVertexPointer(3, GL10.GL_FIXED, 0, makeIntBuffer(vertices));
+		gl.glVertexPointer(3, GL10.GL_FIXED, 0, intbuffer);
 
 		// 色情報配列をセット
-		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, makeFloatBuffer(coords));
+		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, floatbuffer[number]);
 
 		// セットした配列を元に描画
 		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);

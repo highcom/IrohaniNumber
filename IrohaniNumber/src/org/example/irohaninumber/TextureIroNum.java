@@ -30,7 +30,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private int backgroundID;
 
 	// 読み込んだテクスチャのID
-	private int[] texID;
+	private int frontTexID;
+	private int backTexID;
 	private int[] iroID;
 	private int level;
 	private int width;
@@ -42,6 +43,9 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private float touchY;
 	private float[] angle;
 	private float[] addAngle;
+	// テクスチャの位置
+	private float x;
+	private float y;
 	// タッチする順番
 	private int startNum;
 	private int touchNum;
@@ -84,6 +88,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	public TextureIroNum() {
 		sec = 0;
 		dec = 0;
+		frontTexID = -1;
+		backTexID = -1;
 		readyStartTime = -1;
 		readyEndTime = -1;
 		readyScale = 2.0f;
@@ -124,12 +130,10 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
         Intent intent = getIntent();
         level = intent.getIntExtra("LEVEL", -1);
         // 配列の生成＆初期化
-        texID = new int[level*level];
         iroID = new int[level*level];
         angle = new float[level*level];
         addAngle = new float[level*level];
         for(int i = 0; i < level*level; i++) {
-        	texID[i] = -1;
         	iroID[i] = -1;
         	angle[i] = 0;
         	addAngle[i] = 0;
@@ -152,6 +156,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
         // いろはをランダムな順番に生成
         startNum = irohaCreate();
         touchNum = startNum;
+        TextureDrawer.TextureDrawerInit(level, texsize, iroID);
 
         // タイトルバーを消す
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -239,13 +244,13 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 
     	// 中心はx 160, y 240
     	for(int i = 0; i < level*level; i++) {
-    		float x = (float)(texsize*(i%level)+texX);
-    		float y = (float)(-texsize*(i/level)+texY);
+    		x = (float)(texsize*(i%level)+texX);
+    		y = (float)(-texsize*(i/level)+texY);
     		if(x-texsize/2 < touchX && touchX < x+texsize/2 && y-texsize/2 < touchY && touchY < y+texsize/2) {
     			// タッチする順番とマスが合っていたらひっくり返す
     			if(touchNum == iroID[i] && angle[i] == 0.0f) {
     				soundPool.play(secorrect, (float)volume, (float)volume, 0, 0, 1.0f);
-    				addAngle[i] = 20.0f;
+    				addAngle[i] = 5.0f;
     				touchNum++;
     			} else {
     				soundPool.play(semistake, (float)volume, (float)volume, 0, 0, 1.0f);
@@ -254,24 +259,24 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     			/*
     			if(angle[i] == 0.0f) {
     				soundPool.play(secorrect, (float)volume, (float)volume, 0, 0, 1.0f);
-    				addAngle[i] = 20.0f;
+    				addAngle[i] = 5.0f;
     				touchNum++;
     			}
-    			*/
+				*/
     			touchX = 0.0f;
     			touchY = 0.0f;
     		}
 
         	// 裏側を向いている間にテクスチャを変更
 			if(angle[i] == 180.0f) {
-        		texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.iroha_ok);
-        	} else if(angle[i] >= 360.0f) {
         		addAngle[i] = 0.0f;
         	}
 			angle[i] += addAngle[i];
 
-        	// テクスチャの描画
-			TextureDrawer.drawTexture(gl, texID[i],  x, y, texsize, texsize, angle[i], 0.9f, 0.9f, iroID[i]);
+        	// テクスチャの描画(表)
+			TextureDrawer.drawTexture(gl, frontTexID, x, y, texsize, texsize, angle[i], 0.9f, 0.9f, i);
+        	// テクスチャの描画(裏)
+			TextureDrawer.drawTexture(gl, backTexID, x, y, texsize, texsize, 180.0f+angle[i], 0.9f, 0.9f, i);
     	}
     }
 
@@ -399,9 +404,8 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
     	gl.glShadeModel(GL10.GL_FLAT);
 
     	// リソース読み込み
-    	for(int i = 0; i < level*level; i++) {
-    		texID[i] = TextureLoader.loadTexture(gl, this, R.drawable.iroha);
-    	}
+		frontTexID = TextureLoader.loadTexture(gl, this, R.drawable.iroha);
+		backTexID = TextureLoader.loadTexture(gl, this, R.drawable.iroha_ok);
     	backgroundID = TextureLoader.loadTexture(gl, this, R.drawable.game_background);
     	ready1ID = TextureLoader.loadTexture(gl, this, R.drawable.ready1);
     	ready2ID = TextureLoader.loadTexture(gl, this, R.drawable.ready2);
