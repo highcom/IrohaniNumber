@@ -36,53 +36,53 @@ public class IrohaniRanking extends Activity {
 	private int dec;
 	private AdView adView;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-    	Context context = this;
-    	int level;
-    	long[] rank;
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		Context context = this;
+		int level;
+		long[] rank;
 
-    	rank = new long[11];
+		rank = new long[11];
 
-    	super.onCreate(savedInstanceState);
-    	// タイトルバーを消す
-    	requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.irohani_ranking);
+		super.onCreate(savedInstanceState);
+		// タイトルバーを消す
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.irohani_ranking);
 
-        LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout);
-        // adView を作成する
-        adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
-        layout.addView(adView);
-        AdRequest request = new AdRequest();
+		LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout);
+		// adView を作成する
+		adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
+		layout.addView(adView);
+		AdRequest request = new AdRequest();
 
-        adView.loadAd(request);
+		adView.loadAd(request);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-        ListView listView = (ListView) findViewById(R.id.rankListView1);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+		ListView listView = (ListView) findViewById(R.id.rankListView1);
 
-        // タイムを取得
-        Intent intent = getIntent();
-        finishTime = intent.getLongExtra("SCORE", -1)/10;
-        level = intent.getIntExtra("LEVEL", -1);
+		// タイムを取得
+		Intent intent = getIntent();
+		finishTime = intent.getLongExtra("SCORE", -1)/10;
+		level = intent.getIntExtra("LEVEL", -1);
 
-        if (level  == 4) {
-        	RANK_TITLE = "初級のスコア";
-        	RANK_FILE = "ranking_1.dat";
-        } else if (level  == 5) {
-        	RANK_TITLE = "中級のスコア";
-        	RANK_FILE = "ranking_2.dat";
-        } else if (level  == 6) {
-        	RANK_TITLE = "上級のスコア";
-        	RANK_FILE = "ranking_3.dat";
-        } else {
-        	RANK_TITLE = "スコア";
-        	RANK_FILE = "ranking_other.dat";
-        }
+		if (level  == 4) {
+			RANK_TITLE = "初級のスコア";
+			RANK_FILE = "ranking_1.dat";
+		} else if (level  == 5) {
+			RANK_TITLE = "中級のスコア";
+			RANK_FILE = "ranking_2.dat";
+		} else if (level  == 6) {
+			RANK_TITLE = "上級のスコア";
+			RANK_FILE = "ranking_3.dat";
+		} else {
+			RANK_TITLE = "スコア";
+			RANK_FILE = "ranking_other.dat";
+		}
 
-        // レベルに応じたタイトルを表示
-        TextView title_text = (TextView)findViewById(R.id.titleView1);
-        title_text.setText(RANK_TITLE);
-        // 今回のスコアを表示
+		// レベルに応じたタイトルを表示
+		TextView title_text = (TextView)findViewById(R.id.titleView1);
+		title_text.setText(RANK_TITLE);
+		// 今回のスコアを表示
 		if(finishTime != 0) {
 			sec = (int)finishTime/100;
 			dec = (int)finishTime%100;
@@ -90,24 +90,24 @@ public class IrohaniRanking extends Activity {
 			text.setText("今回のスコア    " + sec + "." + dec + " 秒");
 		}
 
-        // ファイルから今までの記録を読み込み
-        DataInputStream in = null;
-        try {
-        	FileInputStream file = context.openFileInput(RANK_FILE);
-        	in = new DataInputStream(file);
-        	for(int i = 0; i < RANK_MAX; i++) {
-        		rank[i] = in.readLong();
-        	}
-            in.close();
-        }  catch(final FileNotFoundException e) {
-        	e.printStackTrace();
-        } catch(IOException e) {
-        	e.printStackTrace();
-        }
+		// ファイルから今までの記録を読み込み
+		DataInputStream in = null;
+		try {
+			FileInputStream file = context.openFileInput(RANK_FILE);
+			in = new DataInputStream(file);
+			for(int i = 0; i < RANK_MAX; i++) {
+				rank[i] = in.readLong();
+			}
+			in.close();
+		}  catch(final FileNotFoundException e) {
+			e.printStackTrace();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
 
-        // 今回のタイムを追加
-        rank[RANK_MAX-1] = finishTime;
-        // ソートしてランキング形式で表示
+		// 今回のタイムを追加
+		rank[RANK_MAX-1] = finishTime;
+		// ソートしてランキング形式で表示
 		Arrays.sort(rank);
 		for(i = 0, rank_cnt = 0; i < RANK_MAX; i++) {
 			// ランキングは上位10件まで
@@ -123,44 +123,43 @@ public class IrohaniRanking extends Activity {
 			}
 		}
 
-        // アダプターを設定
-        listView.setAdapter(adapter);
+		// アダプターを設定
+		listView.setAdapter(adapter);
 
-        // ゲーム終了後の場合だけ書き込みを行う
-        if (finishTime != 0) {
-        	// 更新したランキングをファイルに書き込み
-        	DataOutputStream out = null;
-        	try {
-        		FileOutputStream file = context.openFileOutput(RANK_FILE, Context.MODE_PRIVATE);
-        		out = new DataOutputStream(file);
-        		// 11個目はランク外として書かない。
-        		for(int i = 0; i < RANK_MAX; i++) {
-        			if(rank[i] != 0) {
-        				out.writeLong(rank[i]);
-        			}
-        		}
-        		out.flush();
-        		file.close();
-        	}  catch(final FileNotFoundException e) {
-        		System.out.println("ファイルが見つかりません。");
-        		e.printStackTrace();
-        	} catch(IOException e) {
-        		e.printStackTrace();
-        	}
-        }
+		// ゲーム終了後の場合だけ書き込みを行う
+		if (finishTime != 0) {
+			// 更新したランキングをファイルに書き込み
+			DataOutputStream out = null;
+			try {
+				FileOutputStream file = context.openFileOutput(RANK_FILE, Context.MODE_PRIVATE);
+				out = new DataOutputStream(file);
+				// 11個目はランク外として書かない。
+				for(int i = 0; i < RANK_MAX; i++) {
+					if(rank[i] != 0) {
+						out.writeLong(rank[i]);
+					}
+				}
+				out.flush();
+				file.close();
+			}  catch(final FileNotFoundException e) {
+				System.out.println("ファイルが見つかりません。");
+				e.printStackTrace();
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
 
-        Button btnBack = (Button)findViewById(R.id.back);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
-        		finish();
-        	}
-        });
-    }
+		Button btnBack = (Button)findViewById(R.id.back);
+		btnBack.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				finish();
+			}
+		});
+	}
 
-    @Override
-    public void onDestroy() {
-        adView.destroy();
-        super.onDestroy();
-      }
-
+	@Override
+	public void onDestroy() {
+		adView.destroy();
+		super.onDestroy();
+     }
 }
