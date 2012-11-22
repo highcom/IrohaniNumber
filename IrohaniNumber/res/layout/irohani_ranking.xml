@@ -46,8 +46,8 @@
         android:id="@+id/linearLayout"
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/back" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
     </LinearLayout>
 
 </RelativeLayout>

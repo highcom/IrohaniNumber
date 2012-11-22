@@ -250,7 +250,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 				// タッチする順番とマスが合っていたらひっくり返す
 				if(touchNum == iroID[i] && angle[i] == 0.0f) {
 					soundPool.play(secorrect, (float)volume, (float)volume, 0, 0, 1.0f);
-					addAngle[i] = 5.0f;
+					addAngle[i] = 6.0f;
 					touchNum++;
 				} else {
 					soundPool.play(semistake, (float)volume, (float)volume, 0, 0, 1.0f);
@@ -259,7 +259,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 				/*
  				if(angle[i] == 0.0f) {
 					soundPool.play(secorrect, (float)volume, (float)volume, 0, 0, 1.0f);
-					addAngle[i] = 5.0f;
+					addAngle[i] = 6.0f;
 					touchNum++;
 				}
 				*/
@@ -268,7 +268,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 			}
 
 			// 裏側を向いている間にテクスチャを変更
-			if(angle[i] == 180.0f) {
+			if(angle[i] >= 180.0f) {
 				addAngle[i] = 0.0f;
 			}
 			angle[i] += addAngle[i];
