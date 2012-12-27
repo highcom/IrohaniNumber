@@ -54,6 +54,7 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 	private LabelMaker labels;
 	private int labelTIME;
 	private int labelDot;
+	private int labelNEXT;
 	private long startTime;
 	// 数値を描画するためのクラス
 	private NumericSprite numericSprite;
@@ -147,10 +148,10 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 		// テクスチャの初期貼り付け位置
 		if(level%2 == 0) {
 			texX = width/2 - texsize/2 - texsize*(level/2-1);
-			texY = height/2 +texsize/2 + texsize*(level/2-1);
+			texY = height/2 +texsize/2 + texsize*(level/2-1) - height/15;
 		} else {
 			texX = width/2 - texsize*(level/2);
-			texY = height/2 + texsize*(level/2);
+			texY = height/2 + texsize*(level/2) - height/15;
 		}
 
 		// いろはをランダムな順番に生成
@@ -228,7 +229,14 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 		labels.beginDrawing(gl, width, height);
 		labels.draw(gl, 0, height*9/10 - labels.getHeight(labelTIME),labelTIME);
 		labels.draw(gl, labels.getWidth(labelTIME) + numericSprite.width(), height*9/10 - labels.getHeight(labelTIME), labelDot);
+		// 次のタッチパネル
+		labels.draw(gl, width - labels.getWidth(labelNEXT) - texsize*0.7f, height*9/10 - labels.getHeight(labelTIME), labelNEXT);
 		labels.endDrawing(gl);
+		for (int i = 0; i < level*level; i++) {
+			if (touchNum == iroID[i]) {
+				TextureDrawer.drawTexture(gl, frontTexID, width - texsize/2*0.7f, height*9/10 - texsize/2*0.5f, texsize, texsize, 0.0f, 0.5f, 0.5f, i);
+			}
+		}
 		// すべてのマスを明けるまでは経過時間を計算
 		if(touchNum < startNum + level*level) {
 			finishTime = calcPassTime();
@@ -249,8 +257,10 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 			if(x-texsize/2 < touchX && touchX < x+texsize/2 && y-texsize/2 < touchY && touchY < y+texsize/2) {
 				// タッチする順番とマスが合っていたらひっくり返す
 				if(touchNum == iroID[i] && angle[i] == 0.0f) {
+					System.out.println("iroID " + iroID[i]);
+					System.out.println("touchNum " + touchNum);
 					soundPool.play(secorrect, (float)volume, (float)volume, 0, 0, 1.0f);
-					addAngle[i] = 6.0f;
+					addAngle[i] = 9.0f;
 					touchNum++;
 				} else {
 					soundPool.play(semistake, (float)volume, (float)volume, 0, 0, 1.0f);
@@ -420,8 +430,9 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 		}
 		labels.initialize(gl);
 		labels.beginAdding(gl);
-		labelTIME = labels.add(gl, "じかん:", labelPaint);
+		labelTIME = labels.add(gl, "時間：", labelPaint);
 		labelDot = labels.add(gl, ".", labelPaint);
+		labelNEXT = labels.add(gl, "次：", labelPaint);
 		labels.endAdding(gl);
 		// 数値文字列を生成
 		if (numericSprite != null) {

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -49,6 +50,9 @@ public class IrohaniRanking extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.irohani_ranking);
 
+		// フォントを取得
+		Typeface tf = Typeface.createFromAsset(getAssets(), "acgyosyo.ttf");
+
 		LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout);
 		// adView を作成する
 		adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
@@ -66,28 +70,30 @@ public class IrohaniRanking extends Activity {
 		level = intent.getIntExtra("LEVEL", -1);
 
 		if (level  == 4) {
-			RANK_TITLE = "初級のスコア";
+			RANK_TITLE = "初級の得点";
 			RANK_FILE = "ranking_1.dat";
 		} else if (level  == 5) {
-			RANK_TITLE = "中級のスコア";
+			RANK_TITLE = "中級の得点";
 			RANK_FILE = "ranking_2.dat";
 		} else if (level  == 6) {
-			RANK_TITLE = "上級のスコア";
+			RANK_TITLE = "上級の得点";
 			RANK_FILE = "ranking_3.dat";
 		} else {
-			RANK_TITLE = "スコア";
+			RANK_TITLE = "得点";
 			RANK_FILE = "ranking_other.dat";
 		}
 
 		// レベルに応じたタイトルを表示
 		TextView title_text = (TextView)findViewById(R.id.titleView1);
+		title_text.setTypeface(tf);
 		title_text.setText(RANK_TITLE);
 		// 今回のスコアを表示
 		if(finishTime != 0) {
 			sec = (int)finishTime/100;
 			dec = (int)finishTime%100;
 			TextView text = (TextView)findViewById(R.id.timeView1);
-			text.setText("今回のスコア    " + sec + "." + dec + " 秒");
+			text.setText("今回の得点    " + sec + "." + dec + " 秒");
+			text.setTypeface(tf);
 		}
 
 		// ファイルから今までの記録を読み込み
@@ -150,6 +156,7 @@ public class IrohaniRanking extends Activity {
 		}
 
 		Button btnBack = (Button)findViewById(R.id.back);
+		btnBack.setTypeface(tf);
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();
