@@ -40,6 +40,7 @@ public class IrohaniNumber extends Activity {
 		adView.loadAd(request);
 		Button btnInst = (Button)findViewById(R.id.instructions);
 		btnInst.setTypeface(tf);
+		btnInst.setTextSize(20.0f);
 		btnInst.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -51,6 +52,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnPrac = (Button)findViewById(R.id.practice);
 		btnPrac.setTypeface(tf);
+		btnPrac.setTextSize(20.0f);
 		btnPrac.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -63,6 +65,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnLev1 = (Button)findViewById(R.id.level1);
 		btnLev1.setTypeface(tf);
+		btnLev1.setTextSize(20.0f);
 		btnLev1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -75,6 +78,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnLev2 = (Button)findViewById(R.id.level2);
 		btnLev2.setTypeface(tf);
+		btnLev2.setTextSize(20.0f);
 		btnLev2.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -87,6 +91,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnLev3 = (Button)findViewById(R.id.level3);
 		btnLev3.setTypeface(tf);
+		btnLev3.setTextSize(20.0f);
 		btnLev3.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -99,6 +104,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnScore1 = (Button)findViewById(R.id.level1_score);
 		btnScore1.setTypeface(tf);
+		btnScore1.setTextSize(20.0f);
 		btnScore1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -111,6 +117,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnScore2 = (Button)findViewById(R.id.level2_score);
 		btnScore2.setTypeface(tf);
+		btnScore2.setTextSize(20.0f);
 		btnScore2.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成
@@ -123,6 +130,7 @@ public class IrohaniNumber extends Activity {
 
 		Button btnScore3 = (Button)findViewById(R.id.level3_score);
 		btnScore3.setTypeface(tf);
+		btnScore3.setTextSize(20.0f);
 		btnScore3.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// インテントのインスタンス生成

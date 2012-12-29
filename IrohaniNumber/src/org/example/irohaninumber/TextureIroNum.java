@@ -102,9 +102,9 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 		labels = null;
 		numericSprite = null;
 		labelPaint = new Paint();
-		labelPaint.setTextSize(32);
+		labelPaint.setTextSize(36);
 		labelPaint.setAntiAlias(true);
-		labelPaint.setARGB(0xff, 0xff, 0xff, 0xff);
+		labelPaint.setARGB(0xff, 0xff, 0xff, 0x00);
 	}
 
 	/** Called when the activity is first created. */
@@ -230,11 +230,13 @@ public class TextureIroNum extends Activity implements GLSurfaceView.Renderer {
 		labels.draw(gl, 0, height*9/10 - labels.getHeight(labelTIME),labelTIME);
 		labels.draw(gl, labels.getWidth(labelTIME) + numericSprite.width(), height*9/10 - labels.getHeight(labelTIME), labelDot);
 		// 次のタッチパネル
-		labels.draw(gl, width - labels.getWidth(labelNEXT) - texsize*0.7f, height*9/10 - labels.getHeight(labelTIME), labelNEXT);
+		labels.draw(gl, width - labels.getWidth(labelNEXT) - texsize*0.7f, height*9/10 - labels.getHeight(labelNEXT), labelNEXT);
 		labels.endDrawing(gl);
 		for (int i = 0; i < level*level; i++) {
 			if (touchNum == iroID[i]) {
 				TextureDrawer.drawTexture(gl, frontTexID, width - texsize/2*0.7f, height*9/10 - texsize/2*0.5f, texsize, texsize, 0.0f, 0.5f, 0.5f, i);
+				// テクスチャを薄く見せる
+				TextureDrawer.drawTexture(gl, width - texsize/2*0.7f, height*9/10 - texsize/2*0.5f, texsize, texsize, 0.0f, 0.5f, 0.5f);
 			}
 		}
 		// すべてのマスを明けるまでは経過時間を計算

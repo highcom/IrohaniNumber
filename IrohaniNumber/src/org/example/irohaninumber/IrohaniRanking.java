@@ -157,6 +157,7 @@ public class IrohaniRanking extends Activity {
 
 		Button btnBack = (Button)findViewById(R.id.back);
 		btnBack.setTypeface(tf);
+		btnBack.setTextSize(20.0f);
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();

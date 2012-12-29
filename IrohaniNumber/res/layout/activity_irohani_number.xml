@@ -11,14 +11,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="38dp"
+        android:shadowColor="#99000000"
+        android:shadowDx="3.0"
+        android:shadowDy="5.0"
+        android:shadowRadius="2.0"
         android:text="いろはにほへと！"
         android:textColor="@color/white"
         android:textSize="36dp"
         android:textStyle="bold"
-        android:shadowDx="3.0"
-        android:shadowDy="5.0"
-        android:shadowRadius="2.0"
-        android:shadowColor="#99000000"
         tools:context=".IrohaniNumber" />
 
     <Button
@@ -29,9 +29,9 @@
         android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="42dp"
-        android:textStyle="bold"
-        android:background="@drawable/original_button"
-        android:text="いろは歌とは？" />
+        android:background="@layout/original_button"
+        android:text="いろは歌とは？"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/practice"
@@ -41,9 +41,9 @@
         android:layout_alignRight="@+id/instructions"
         android:layout_below="@+id/instructions"
         android:layout_marginTop="3dp"
-        android:textStyle="bold"
-        android:background="@drawable/original_button"
-        android:text="練習" />
+        android:background="@layout/original_button"
+        android:text="練習"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/level1"
@@ -51,10 +51,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
+        android:layout_marginRight="3dp"
         android:layout_toLeftOf="@+id/level1_score"
-        android:textStyle="bold"
-        android:background="@drawable/original_button"
-        android:text="初級" />
+        android:background="@layout/original_button"
+        android:text="初級"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/level1_score"
@@ -62,9 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:textStyle="bold"
-        android:background="@drawable/original_button"
-        android:text="得点" />
+        android:background="@layout/original_button"
+        android:text="得点"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/level2"
@@ -73,53 +74,53 @@
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/level1"
         android:layout_below="@+id/level1"
-        android:textStyle="bold"
         android:layout_marginTop="3dp"
-        android:background="@drawable/original_button"
-        android:text="中級" />
+        android:background="@layout/original_button"
+        android:text="中級"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/level2_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/level1"
-        android:layout_toRightOf="@+id/level1"
-        android:textStyle="bold"
         android:layout_marginTop="3dp"
-        android:background="@drawable/original_button"
-        android:text="得点" />
+        android:layout_toRightOf="@+id/level1"
+        android:background="@layout/original_button"
+        android:text="得点"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/level3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/level3_score"
-        android:layout_alignBottom="@+id/level3_score"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/level3_score"
-        android:textStyle="bold"
+        android:layout_alignRight="@+id/level2"
+        android:layout_below="@+id/level2"
         android:layout_marginTop="3dp"
-        android:background="@drawable/original_button"
-        android:text="上級" />
+        android:background="@layout/original_button"
+        android:text="上級"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/level3_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/level2"
-        android:layout_toRightOf="@+id/level2"
-        android:textStyle="bold"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/original_button"
-        android:text="得点" />
+        android:layout_alignBaseline="@+id/level3"
+        android:layout_alignBottom="@+id/level3"
+        android:layout_toRightOf="@+id/level1"
+        android:background="@layout/original_button"
+        android:text="得点"
+        android:textStyle="bold" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:myapp="http://schemas.android.com/apk/res/org.example.irohaninumber"
         android:id="@+id/linearLayout"
-        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
     </LinearLayout>
 
 </RelativeLayout>

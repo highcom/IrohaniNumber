@@ -24,6 +24,7 @@ public class IrohaniInstructions extends Activity {
 
 		Button btnPrac = (Button)findViewById(R.id.back);
 		btnPrac.setTypeface(tf);
+		btnPrac.setTextSize(20.0f);
 		btnPrac.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();

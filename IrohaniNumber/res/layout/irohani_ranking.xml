@@ -21,6 +21,7 @@
         android:layout_below="@+id/titleView1"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
+        android:textSize="18dp"
         tools:context=".IrohaniNumber" />
 
     <ListView
@@ -29,7 +30,7 @@
         android:layout_height="319dp"
         android:layout_alignParentLeft="true"
         android:scrollingCache="false"
-        android:background="@color/cream"
+        android:background="@color/clear_cream"
         android:layout_below="@+id/timeView1" >
     </ListView>
 
@@ -40,7 +41,8 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/rankListView1"
         android:textStyle="bold"
-        android:background="@drawable/original_button"
+        android:layout_marginTop="3dp"
+        android:background="@layout/original_button"
         android:text="表題に戻る" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
