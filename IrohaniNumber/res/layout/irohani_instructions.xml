@@ -73,6 +73,6 @@
         android:textStyle="bold"
         android:layout_marginBottom="3dp"
         android:background="@layout/original_button"
-        android:text="タイトルに戻る" />
+        android:text="表題に戻る" />
 
 </RelativeLayout>
