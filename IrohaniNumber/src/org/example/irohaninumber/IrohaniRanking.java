@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class IrohaniRanking extends Activity {
 	private int i;
 	private int rank_cnt;
 	private long finishTime;
+	private long[] rank;
 	private int sec;
 	private int dec;
 	private AdView adView;
@@ -41,7 +43,6 @@ public class IrohaniRanking extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		Context context = this;
 		int level;
-		long[] rank;
 
 		rank = new long[11];
 
@@ -155,12 +156,43 @@ public class IrohaniRanking extends Activity {
 			}
 		}
 
+		// 表題に戻る
 		Button btnBack = (Button)findViewById(R.id.back);
 		btnBack.setTypeface(tf);
 		btnBack.setTextSize(20.0f);
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();
+			}
+		});
+
+		// ツイートする
+		ImageButton btnTweet = (ImageButton)findViewById(R.id.Tweet);
+		btnTweet.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Intent intent = new Intent(Intent.ACTION_SEND);
+				if(finishTime != 0) {
+					sec = (int)finishTime/100;
+					dec = (int)finishTime%100;
+					intent.putExtra(Intent.EXTRA_TEXT,"【" + RANK_TITLE + " : " + sec + "." + dec + " 秒でクリア！" + "】"
+											+ "Androidアプリ「タッチ！いろはにほへと！」\nhttps://play.google.com/store/apps/details?id=org.example.irohaninumber");
+				}
+				else
+				{
+					sec = 0;
+					dec = 0;
+					for(int i = 0; i < RANK_MAX; i++) {
+						if(rank[i] != 0) {
+							sec = (int)rank[i]/100;
+							dec = (int)rank[i]%100;
+							break;
+						}
+					}
+					intent.putExtra(Intent.EXTRA_TEXT,"【" + RANK_TITLE + " : " + sec + "." + dec + " 秒でクリア！" + "】"
+							+ "Androidアプリ「タッチ！いろはにほへと！」\nhttps://play.google.com/store/apps/details?id=org.example.irohaninumber");
+				}
+				intent.setType("text/plain");
+				startActivity(intent);
 			}
 		});
 	}
