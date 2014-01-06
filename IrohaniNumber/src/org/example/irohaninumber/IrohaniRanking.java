@@ -8,6 +8,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
+import jp.basicinc.gamefeat.ranking.android.sdk.controller.GFRankingController;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -30,6 +32,8 @@ import com.google.ads.AdView;
 public class IrohaniRanking extends Activity {
 	private String RANK_TITLE;
 	private String RANK_FILE;
+	private String RANK_WORLD;
+	private String RANK_WORLD_SCORE;
 	private static final int RANK_MAX = 11;
 	private int i;
 	private int rank_cnt;
@@ -37,12 +41,14 @@ public class IrohaniRanking extends Activity {
 	private long[] rank;
 	private int sec;
 	private int dec;
+	private int world_score_flg;
 	private AdView adView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Context context = this;
 		int level;
+		world_score_flg = 0;
 
 		rank = new long[11];
 
@@ -73,15 +79,19 @@ public class IrohaniRanking extends Activity {
 		if (level  == 4) {
 			RANK_TITLE = "初級の得点";
 			RANK_FILE = "ranking_1.dat";
+			RANK_WORLD = "org.example.irohaninumber.1";
 		} else if (level  == 5) {
 			RANK_TITLE = "中級の得点";
 			RANK_FILE = "ranking_2.dat";
+			RANK_WORLD = "org.example.irohaninumber.2";
 		} else if (level  == 6) {
 			RANK_TITLE = "上級の得点";
 			RANK_FILE = "ranking_3.dat";
+			RANK_WORLD = "org.example.irohaninumber.3";
 		} else {
 			RANK_TITLE = "得点";
 			RANK_FILE = "ranking_other.dat";
+			RANK_WORLD = "org.example.irohaninumber.1";
 		}
 
 		// レベルに応じたタイトルを表示
@@ -127,6 +137,12 @@ public class IrohaniRanking extends Activity {
 				dec = (int)rank[i]%100;
 				rank_cnt++;
 				adapter.add(rank_cnt + "位    " + sec + "." + dec + " 秒");
+				if (world_score_flg == 0)
+				{
+					// 一番良いタイムを世界順位として登録
+					RANK_WORLD_SCORE = sec + "." + dec;
+					world_score_flg = 1;
+				}
 			}
 		}
 
@@ -157,12 +173,37 @@ public class IrohaniRanking extends Activity {
 		}
 
 		// 表題に戻る
-		Button btnBack = (Button)findViewById(R.id.back);
-		btnBack.setTypeface(tf);
-		btnBack.setTextSize(20.0f);
+		ImageButton btnBack = (ImageButton)findViewById(R.id.back);
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();
+			}
+		});
+
+		// 世界順位ボタン
+		Button btnWorldRank = (Button)findViewById(R.id.worldRank);
+		btnWorldRank.setTypeface(tf);
+		btnWorldRank.setTextSize(20.0f);
+		btnWorldRank.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				GFRankingController.show(IrohaniRanking.this, RANK_WORLD);
+			}
+		});
+
+		// 得点送信ボタン
+		Button btnScoreSend = (Button)findViewById(R.id.scoreSend);
+		btnScoreSend.setTypeface(tf);
+		btnScoreSend.setTextSize(20.0f);
+		btnScoreSend.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				if (rank_cnt > 0)
+				{
+					//スコア送信（ランキング用）
+					String[] gameIds = {RANK_WORLD};
+					String[] scores = {RANK_WORLD_SCORE};
+					GFRankingController appController = GFRankingController.getIncetance(IrohaniRanking.this);
+					appController.sendScore(gameIds, scores);
+				}
 			}
 		});
 

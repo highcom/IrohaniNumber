@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.example.irohaninumber"
-    android:versionCode="5"
-    android:versionName="2.1" >
+    android:versionCode="6"
+    android:versionName="2.2" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -39,6 +39,14 @@
             android:screenOrientation="portrait"
             android:label="@string/app_name">
          </activity>
+         <!-- Ranking START -->
+         <meta-data android:name="gamefeat_ranking_api_key" android:value="60a05d0e4d7a8726d5b977b3a9c5b49ae3dd359825ad4bf2b0ede351b4f080cc" />
+         <activity
+             android:name="jp.basicinc.gamefeat.ranking.android.sdk.activity.GFRankingActivity"
+             android:label="Ranking"
+             android:configChanges="orientation|keyboardHidden">
+         </activity>
+         <!-- Ranking END -->
         </application>
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

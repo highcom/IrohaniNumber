@@ -34,17 +34,39 @@
         android:layout_below="@+id/timeView1" >
     </ListView>
 
-    <Button
+    <ImageButton
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/rankListView1"
+        android:textStyle="bold"
         android:layout_marginTop="3dp"
         android:layout_marginRight="3dp"
+        android:background="@layout/original_button"
+        android:src="@drawable/redo" />
+
+    <Button
+        android:id="@+id/worldRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rankListView1"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/back"
+        android:background="@layout/original_button"
+        android:text="世界順位"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/scoreSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rankListView1"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
         android:layout_toLeftOf="@+id/Tweet"
         android:background="@layout/original_button"
-        android:text="表題に戻る"
+        android:text="得点送信"
         android:textStyle="bold" />
 
     <ImageButton
