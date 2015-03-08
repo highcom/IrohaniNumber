@@ -33,7 +33,8 @@ public class IrohaniNumber extends Activity {
 
 		LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout);
 		// adView を作成する
-		adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
+		adView = new AdView(this, AdSize.BANNER, "ca-app-pub-3217012767112748/8348877912");
+		//adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
 		layout.addView(adView);
 		AdRequest request = new AdRequest();
 
