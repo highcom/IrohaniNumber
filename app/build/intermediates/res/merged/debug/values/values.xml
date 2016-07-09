@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="clear_black">#77000000</color>
+    <color name="clear_cream">#CCE7E18F</color>
+    <color name="cream">#E7E18F</color>
+    <color name="green">#006633</color>
+    <color name="lightgreen">#23ce34</color>
+    <color name="orange">#ff9900</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <declare-styleable name="com.admob.android.ads.AdView"><attr format="boolean" name="testing"/><attr format="color" name="backgroundColor"/><attr format="color" name="textColor"/><attr format="string" name="keywords"/><attr format="integer" name="refreshInterval"/><attr format="boolean" name="isGoneWithoutAd"/></declare-styleable>
+    <declare-styleable name="com.google.ads.AdView"><attr name="adSize"><enum name="BANNER" value="1"/><enum name="IAB_MRECT" value="2"/><enum name="IAB_BANNER" value="3"/><enum name="IAB_LEADERBOARD" value="4"/></attr><attr format="string" name="adUnitId"/></declare-styleable>
+    <string name="app_name">いろはにほへと！</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_irohani_number">いろはにほへと！</string>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+</resources>

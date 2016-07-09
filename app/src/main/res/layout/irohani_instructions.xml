@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ranking_background" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="いろは歌とは？"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        tools:context=".IrohaniNumber" />
+
+
+
+<ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_marginTop="41dp"
+    android:layout_marginBottom="50dp"
+    android:fastScrollEnabled="true" >
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@color/clear_black"
+        android:text="
+　いろは歌とは、\n
+\n
+        いろはにほへと　ちりぬるを\n
+        わかよたれそ　　つねならむ\n
+        うゐのおくやま　けふこえて\n
+        あさきゆめみし　ゑひもせす　ん\n
+\n
+４７文字＋１文字をすべての仮名を重複させずに使って作られた誦文のことで、歌の意味としては\n
+\n
+        色はにほへど　散りぬるを\n
+        我が世たれぞ　常ならむ\n
+        有為の奥山　　今日越えて\n
+        浅き夢見じ　　酔ひもせず\n
+\n
+以上の通りになっています。\n
+　このゲームでは、画面にランダムに表示されたいろは歌を順番にタッチしていき、クリアタイムを競いつつ、いろは歌も覚えよう！というコンセプトのゲームです。\n
+\n
+        練習　：　３×３マス\n
+        初級　：　４×４マス\n
+        中級　：　５×５マス\n
+        上級　：　６×６マス\n
+\n
+いろは歌のスタート位置は、ランダムな位置からスタートして上記のマスの数分の連続したひらがなが出現します。\n
+\n
+例）\n
+ 練習：「よたれそつねならむ」がランダムに表示されます。\n
+ \n"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        tools:context=".IrohaniNumber" />
+</ScrollView>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:textStyle="bold"
+        android:layout_marginBottom="3dp"
+        android:background="@layout/original_button"
+        android:text="表題に戻る" />
+
+</RelativeLayout>

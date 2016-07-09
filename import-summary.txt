@@ -1,0 +1,291 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* .metadata\
+* .metadata\.copied.metadata.default
+* .metadata\.lock
+* .metadata\.log
+* .metadata\.mylyn\
+* .metadata\.mylyn\.taskListIndex\
+* .metadata\.mylyn\.taskListIndex\segments.gen
+* .metadata\.mylyn\.taskListIndex\segments_1
+* .metadata\.mylyn\.tasks.xml.zip
+* .metadata\.mylyn\repositories.xml.zip
+* .metadata\.mylyn\tasks.xml.zip
+* .metadata\.plugins\
+* .metadata\.plugins\org.eclipse.cdt.core\
+* .metadata\.plugins\org.eclipse.cdt.core\.log
+* .metadata\.plugins\org.eclipse.cdt.make.core\
+* .metadata\.plugins\org.eclipse.cdt.make.core\specs.c
+* .metadata\.plugins\org.eclipse.cdt.make.core\specs.cpp
+* .metadata\.plugins\org.eclipse.core.resources\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\.org.eclipse.jdt.core.external.folders\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\.org.eclipse.jdt.core.external.folders\.location
+* .metadata\.plugins\org.eclipse.core.resources\.projects\IrohaniNumber\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\IrohaniNumber\.indexes\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\IrohaniNumber\.indexes\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\IrohaniNumber\.markers
+* .metadata\.plugins\org.eclipse.core.resources\.projects\IrohaniNumber\org.eclipse.jdt.core\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\IrohaniNumber\org.eclipse.jdt.core\state.dat
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\5f\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\5f\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\d6\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\d6\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\de\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\de\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\eb\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\eb\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\ee\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\a0\ee\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.indexes\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.location
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\.markers
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\org.eclipse.egit.core\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\org.eclipse.egit.core\GitProjectData.properties
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\org.eclipse.jdt.core\
+* .metadata\.plugins\org.eclipse.core.resources\.projects\RabbitWhiskers\org.eclipse.jdt.core\state.dat
+* .metadata\.plugins\org.eclipse.core.resources\.root\
+* .metadata\.plugins\org.eclipse.core.resources\.root\.indexes\
+* .metadata\.plugins\org.eclipse.core.resources\.root\.indexes\history.version
+* .metadata\.plugins\org.eclipse.core.resources\.root\.indexes\properties.index
+* .metadata\.plugins\org.eclipse.core.resources\.root\.indexes\properties.version
+* .metadata\.plugins\org.eclipse.core.resources\.root\15.tree
+* .metadata\.plugins\org.eclipse.core.resources\.safetable\
+* .metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources
+* .metadata\.plugins\org.eclipse.core.runtime\
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\com.android.ide.eclipse.adt.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\com.android.ide.eclipse.ddms.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\com.sysdeo.eclipse.tomcat.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\net.sf.jadclipse.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ant.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.cdt.debug.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.cdt.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.core.resources.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.debug.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.debug.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.egit.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.egit.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jdt.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jdt.launching.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jdt.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.jst.j2ee.webservice.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.m2e.discovery.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.mylyn.context.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.mylyn.monitor.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.mylyn.tasks.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.php.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.php.debug.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.php.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.team.cvs.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.team.svn.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.team.svn.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.team.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ui.browser.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ui.editors.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ui.ide.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.ui.workbench.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.wst.jsdt.ui.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.wst.sse.core.prefs
+* .metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.wst.ws.service.policy.prefs
+* .metadata\.plugins\org.eclipse.debug.core\
+* .metadata\.plugins\org.eclipse.debug.core\.launches\
+* .metadata\.plugins\org.eclipse.debug.core\.launches\IrohaniNumber.launch
+* .metadata\.plugins\org.eclipse.debug.core\.launches\RabbitWhiskers.launch
+* .metadata\.plugins\org.eclipse.debug.ui\
+* .metadata\.plugins\org.eclipse.debug.ui\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.debug.ui\launchConfigurationHistory.xml
+* .metadata\.plugins\org.eclipse.e4.workbench\
+* .metadata\.plugins\org.eclipse.e4.workbench\workbench.xmi
+* .metadata\.plugins\org.eclipse.egit.ui\
+* .metadata\.plugins\org.eclipse.egit.ui\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.equinox.p2.ui\
+* .metadata\.plugins\org.eclipse.equinox.p2.ui\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.jdt.core\
+* .metadata\.plugins\org.eclipse.jdt.core\.org.eclipse.jdt.core.external.folders\
+* .metadata\.plugins\org.eclipse.jdt.core\.org.eclipse.jdt.core.external.folders\.project
+* .metadata\.plugins\org.eclipse.jdt.core\1172200508.index
+* .metadata\.plugins\org.eclipse.jdt.core\1922219191.index
+* .metadata\.plugins\org.eclipse.jdt.core\2411407688.index
+* .metadata\.plugins\org.eclipse.jdt.core\2677609660.index
+* .metadata\.plugins\org.eclipse.jdt.core\3768042168.index
+* .metadata\.plugins\org.eclipse.jdt.core\3935185718.index
+* .metadata\.plugins\org.eclipse.jdt.core\externalLibsTimeStamps
+* .metadata\.plugins\org.eclipse.jdt.core\invalidArchivesCache
+* .metadata\.plugins\org.eclipse.jdt.core\javaLikeNames.txt
+* .metadata\.plugins\org.eclipse.jdt.core\nonChainingJarsCache
+* .metadata\.plugins\org.eclipse.jdt.core\savedIndexNames.txt
+* .metadata\.plugins\org.eclipse.jdt.core\variablesAndContainers.dat
+* .metadata\.plugins\org.eclipse.jdt.launching\
+* .metadata\.plugins\org.eclipse.jdt.launching\.install.xml
+* .metadata\.plugins\org.eclipse.jdt.launching\libraryInfos.xml
+* .metadata\.plugins\org.eclipse.jdt.ui\
+* .metadata\.plugins\org.eclipse.jdt.ui\OpenTypeHistory.xml
+* .metadata\.plugins\org.eclipse.jdt.ui\QualifiedTypeNameHistory.xml
+* .metadata\.plugins\org.eclipse.jdt.ui\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.m2e.logback.configuration\
+* .metadata\.plugins\org.eclipse.m2e.logback.configuration\0.log
+* .metadata\.plugins\org.eclipse.m2e.logback.configuration\logback.1.3.0.20130129-0926.xml
+* .metadata\.plugins\org.eclipse.pde.core\
+* .metadata\.plugins\org.eclipse.pde.core\.cache\
+* .metadata\.plugins\org.eclipse.pde.core\.cache\clean-cache.properties
+* .metadata\.plugins\org.eclipse.team.ui\
+* .metadata\.plugins\org.eclipse.team.ui\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.ui.ide\
+* .metadata\.plugins\org.eclipse.ui.ide\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.ui.workbench\
+* .metadata\.plugins\org.eclipse.ui.workbench\dialog_settings.xml
+* .metadata\.plugins\org.eclipse.ui.workbench\workingsets.xml
+* .metadata\.plugins\org.eclipse.wb.discovery.core\
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_gwt.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_swing.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_swt.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkit_xwt.png
+* .metadata\.plugins\org.eclipse.wb.discovery.core\toolkits.xml
+* .metadata\.plugins\org.eclipse.wst.common.snippets\
+* .metadata\.plugins\org.eclipse.wst.common.snippets\hidden.xml
+* .metadata\.plugins\org.eclipse.wst.common.snippets\user.xml
+* .metadata\.plugins\org.eclipse.wst.jsdt.core\
+* .metadata\.plugins\org.eclipse.wst.jsdt.core\variablesAndContainers.dat
+* .metadata\.plugins\org.eclipse.wst.jsdt.ui\
+* .metadata\.plugins\org.eclipse.wst.jsdt.ui\OpenTypeHistory.xml
+* .metadata\.plugins\org.eclipse.wst.jsdt.ui\QualifiedTypeNameHistory.xml
+* .metadata\.plugins\zigen.plugin.db\
+* .metadata\.plugins\zigen.plugin.db\bookmark.xml
+* .metadata\.plugins\zigen.plugin.db\db_settings.xml
+* .metadata\.plugins\zigen.plugin.db\plugin_settings.xml
+* .metadata\version.ini
+* GoogleAdMobAdsSdk-6.2.1\
+* GoogleAdMobAdsSdk-6.2.1\Add-ons\
+* GoogleAdMobAdsSdk-6.2.1\Add-ons\googleanalyticsandroid\
+* GoogleAdMobAdsSdk-6.2.1\Add-ons\googleanalyticsandroid\Changelog.txt
+* GoogleAdMobAdsSdk-6.2.1\Add-ons\googleanalyticsandroid\Readme.txt
+* GoogleAdMobAdsSdk-6.2.1\Add-ons\googleanalyticsandroid\javadocs.zip
+* GoogleAdMobAdsSdk-6.2.1\Add-ons\googleanalyticsandroid\libGoogleAnalyticsV2.jar
+* GoogleAdMobAdsSdk-6.2.1\GoogleAdMobAdsSdk-6.2.1.jar
+* GoogleAdMobAdsSdk-6.2.1\README.txt
+* GoogleAdMobAdsSdk-6.2.1\docs\
+* GoogleAdMobAdsSdk-6.2.1\docs\allclasses-frame.html
+* GoogleAdMobAdsSdk-6.2.1\docs\allclasses-noframe.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\Ad.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\AdListener.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\AdRequest.ErrorCode.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\AdRequest.Gender.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\AdRequest.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\AdSize.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\AdView.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\InterstitialAd.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\EmptyNetworkExtras.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationAdRequest.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationAdapter.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationBannerAdapter.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationBannerListener.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationInterstitialAdapter.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationInterstitialListener.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationServerParameters.MappingException.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\MediationServerParameters.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\NetworkExtras.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\AdMobAdapter.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\AdMobAdapterExtras.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\AdMobAdapterServerParameters.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\package-frame.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\package-summary.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\admob\package-tree.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEvent.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventBanner.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventBannerListener.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventExtras.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventInterstitial.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventInterstitialListener.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventListener.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\CustomEventServerParameters.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\package-frame.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\package-summary.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\customevent\package-tree.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\package-frame.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\package-summary.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\mediation\package-tree.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\package-frame.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\package-summary.html
+* GoogleAdMobAdsSdk-6.2.1\docs\com\google\ads\package-tree.html
+* GoogleAdMobAdsSdk-6.2.1\docs\constant-values.html
+* GoogleAdMobAdsSdk-6.2.1\docs\deprecated-list.html
+* GoogleAdMobAdsSdk-6.2.1\docs\help-doc.html
+* GoogleAdMobAdsSdk-6.2.1\docs\index-all.html
+* GoogleAdMobAdsSdk-6.2.1\docs\index.html
+* GoogleAdMobAdsSdk-6.2.1\docs\overview-frame.html
+* GoogleAdMobAdsSdk-6.2.1\docs\overview-summary.html
+* GoogleAdMobAdsSdk-6.2.1\docs\overview-tree.html
+* GoogleAdMobAdsSdk-6.2.1\docs\package-list
+* GoogleAdMobAdsSdk-6.2.1\docs\resources\
+* GoogleAdMobAdsSdk-6.2.1\docs\resources\inherit.gif
+* GoogleAdMobAdsSdk-6.2.1\docs\serialized-form.html
+* GoogleAdMobAdsSdk-6.2.1\docs\stylesheet.css
+* IrohaniNumber\
+* IrohaniNumber\.classpath
+* IrohaniNumber\.gitignore
+* IrohaniNumber\.metadata\
+* IrohaniNumber\.metadata\.copied.metadata.default
+* IrohaniNumber\.metadata\.lock
+* IrohaniNumber\.project
+* IrohaniNumber\project.properties
+* android-support-v4.jar
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets\
+* libs\GameFeatRankingSDK.jar => app\libs\GameFeatRankingSDK.jar
+* libs\GoogleAdMobAdsSdk-6.2.1.jar => app\libs\GoogleAdMobAdsSdk-6.2.1.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

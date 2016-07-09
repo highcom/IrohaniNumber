@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ready1.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\ready1.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ranking_background.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\ranking_background.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\title_background.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\title_background.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish1.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\finish1.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\twitter.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\twitter.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\redo.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\redo.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\iroha.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\iroha.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ready2.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\ready2.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish2.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\finish2.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\iroha_ok.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\iroha_ok.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\game_background.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\game_background.png"
+    }
+]

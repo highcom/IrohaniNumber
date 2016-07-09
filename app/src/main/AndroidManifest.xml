@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.example.irohaninumber"
+    android:versionCode="7"
+    android:versionName="2.3" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".IrohaniNumber"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_irohani_number" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- admob追加 -->
+       <activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+       <!--
+        <meta-data android:value="a15093d4c7f2722" android:name="ADMOB_PUBLISHER_ID" />
+        <meta-data android:value="a15093d4c7f2722" android:name="ADMOB_INTERSTITIAL_PUBLISHER_ID" />
+        -->
+        <activity android:name=".IrohaniInstructions"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+         </activity>
+        <activity android:name=".TextureIroNum"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+         </activity>
+        <activity android:name=".IrohaniRanking"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+         </activity>
+         <!-- Ranking START -->
+         <meta-data android:name="gamefeat_ranking_api_key" android:value="60a05d0e4d7a8726d5b977b3a9c5b49ae3dd359825ad4bf2b0ede351b4f080cc" />
+         <activity
+             android:name="jp.basicinc.gamefeat.ranking.android.sdk.activity.GFRankingActivity"
+             android:label="Ranking"
+             android:configChanges="orientation|keyboardHidden">
+         </activity>
+         <!-- Ranking END -->
+        </application>
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>

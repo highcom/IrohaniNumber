@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\raw\\semistake.ogg",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\raw\\semistake.ogg"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\raw\\secorrect.ogg",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\raw\\secorrect.ogg"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\raw\\secomplete.ogg",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\raw\\secomplete.ogg"
+    }
+]

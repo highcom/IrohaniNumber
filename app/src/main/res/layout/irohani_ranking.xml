@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/ranking_background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/titleView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="48dp"
+        tools:context=".IrohaniNumber" />
+
+    <TextView
+        android:id="@+id/timeView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleView1"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        tools:context=".IrohaniNumber" />
+
+    <ListView
+        android:id="@+id/rankListView1"
+        android:layout_width="match_parent"
+        android:layout_height="319dp"
+        android:layout_alignParentLeft="true"
+        android:scrollingCache="false"
+        android:background="@color/clear_cream"
+        android:layout_below="@+id/timeView1" >
+    </ListView>
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rankListView1"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@layout/original_button"
+        android:src="@drawable/redo" />
+
+    <Button
+        android:id="@+id/worldRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rankListView1"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/back"
+        android:background="@layout/original_button"
+        android:text="世界順位"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/scoreSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rankListView1"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_toLeftOf="@+id/Tweet"
+        android:background="@layout/original_button"
+        android:text="得点送信"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/Tweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/rankListView1"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"
+        android:background="@layout/original_button"
+        android:src="@drawable/twitter" />
+
+</RelativeLayout>
