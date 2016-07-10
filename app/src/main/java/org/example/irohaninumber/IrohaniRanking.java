@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-import jp.basicinc.gamefeat.ranking.android.sdk.controller.GFRankingController;
+//import jp.basicinc.gamefeat.ranking.android.sdk.controller.GFRankingController;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -22,14 +22,14 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.ads.Ad;
-import com.google.ads.AdListener;
-import com.google.ads.AdRequest;
-import com.google.ads.AdRequest.ErrorCode;
-import com.google.ads.InterstitialAd;
+//import com.google.ads.AdListener;
+//import com.google.ads.AdRequest;
+//import com.google.ads.Ad;
+//import com.google.ads.AdRequest.ErrorCode;
+//import com.google.ads.InterstitialAd;
 
 
-public class IrohaniRanking extends Activity implements AdListener{
+public class IrohaniRanking extends Activity{
 	private String RANK_TITLE;
 	private String RANK_FILE;
 	private String RANK_WORLD;
@@ -43,8 +43,8 @@ public class IrohaniRanking extends Activity implements AdListener{
 	private int dec;
 	private int world_score_flg;
 
-	private String unitID = "ca-app-pub-3217012767112748/4715424317";
-	private InterstitialAd interstitialAd;
+	//private String unitID = "ca-app-pub-3217012767112748/4715424317";
+	//private InterstitialAd interstitialAd;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -66,13 +66,13 @@ public class IrohaniRanking extends Activity implements AdListener{
 		ListView listView = (ListView) findViewById(R.id.rankListView1);
 
 		// インタースティシャルを作成する。
-		interstitialAd = new InterstitialAd(this, unitID);
+		//interstitialAd = new InterstitialAd(this, unitID);
 	    // 広告リクエストを作成する。
-	    AdRequest adRequest = new AdRequest();
+	    //AdRequest adRequest = new AdRequest();
 	    // インタースティシャルの読み込みを開始する。
-	    interstitialAd.loadAd(adRequest);
+	    //interstitialAd.loadAd(adRequest);
 	    // Ad Listener を設定して下のコールバックを使用する
-	    interstitialAd.setAdListener((AdListener) this);
+	    //interstitialAd.setAdListener((AdListener) this);
 
 		// タイムを取得
 		Intent intent = getIntent();
@@ -189,7 +189,7 @@ public class IrohaniRanking extends Activity implements AdListener{
 		btnWorldRank.setTextSize(20.0f);
 		btnWorldRank.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				GFRankingController.show(IrohaniRanking.this, RANK_WORLD);
+				//GFRankingController.show(IrohaniRanking.this, RANK_WORLD);
 			}
 		});
 
@@ -204,8 +204,8 @@ public class IrohaniRanking extends Activity implements AdListener{
 					//スコア送信（ランキング用）
 					String[] gameIds = {RANK_WORLD};
 					String[] scores = {RANK_WORLD_SCORE};
-					GFRankingController appController = GFRankingController.getIncetance(IrohaniRanking.this);
-					appController.sendScore(gameIds, scores);
+					//GFRankingController appController = GFRankingController.getIncetance(IrohaniRanking.this);
+					//appController.sendScore(gameIds, scores);
 				}
 			}
 		});
@@ -241,43 +241,20 @@ public class IrohaniRanking extends Activity implements AdListener{
 		});
 	}
 
-	@Override
-	public void onReceiveAd(Ad ad) {
-	    if (ad == interstitialAd) {
-	    	// 20%の確立で広告を表示させる
-	    	if ((int)(Math.random()*100.0d)%5 == 0)
-	    	{
-	    		interstitialAd.show();
-	    	}
-	    }
-	}
+//	@Override
+//	public void onReceiveAd(Ad ad) {
+//	    if (ad == interstitialAd) {
+//	    	// 20%の確立で広告を表示させる
+//	    	if ((int)(Math.random()*100.0d)%5 == 0)
+//	    	{
+//	    		interstitialAd.show();
+//	    	}
+//	    }
+//	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
      }
 
-	@Override
-	public void onDismissScreen(Ad arg0) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	@Override
-	public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	@Override
-	public void onLeaveApplication(Ad arg0) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	@Override
-	public void onPresentScreen(Ad arg0) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
 }

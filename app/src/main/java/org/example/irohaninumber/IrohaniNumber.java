@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+//import com.google.ads.AdRequest;
+//import com.google.ads.AdSize;
+//import com.google.ads.AdView;
 
 public class IrohaniNumber extends Activity {
 	private AdView adView;
@@ -31,14 +34,20 @@ public class IrohaniNumber extends Activity {
         TextView text1 = (TextView)findViewById(R.id.textView1);
         text1.setTypeface(tf);
 
-		LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout);
-		// adView を作成する
-		adView = new AdView(this, AdSize.BANNER, "ca-app-pub-3217012767112748/8348877912");
-		//adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
-		layout.addView(adView);
-		AdRequest request = new AdRequest();
+		AdView mAdView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		//mAdView.setAdUnitId("ca-app-pub-3217012767112748/8348877912");
+		//mAdView.setAdSize(AdSize.BANNER);
+		mAdView.loadAd(adRequest);
 
-		adView.loadAd(request);
+		//LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout);
+		// adView を作成する
+		//adView = new AdView(this, AdSize.BANNER, "ca-app-pub-3217012767112748/8348877912");
+		//adView = new AdView(this, AdSize.BANNER, "a15093d4c7f2722");
+		//layout.addView(adView);
+		//AdRequest request = new AdRequest();
+
+		//adView.loadAd(request);
 		Button btnInst = (Button)findViewById(R.id.instructions);
 		btnInst.setTypeface(tf);
 		btnInst.setTextSize(20.0f);

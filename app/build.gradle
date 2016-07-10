@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "org.example.irohaninumber"
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 16
     }
 
@@ -16,10 +16,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+                // Rename APK
+                def newName
+                if (variant.buildType.name.equals("release")) {
+                    newName = "IrohaniNumber.apk"
+                } else {
+                    newName = "IrohaniNumberDebug.apk"
+                }
+                output.outputFile = new File(output.outputFile.parent, newName)
+            }
+        }
+    }
 }
 
 dependencies {
     compile 'com.android.support:support-v4:18.0.0'
     compile files('libs/GameFeatRankingSDK.jar')
-    compile files('libs/GoogleAdMobAdsSdk-6.2.1.jar')
+    //compile files('libs/GoogleAdMobAdsSdk-6.2.1.jar')
+    compile 'com.google.android.gms:play-services-ads:9.2.0'
 }

@@ -1,5 +1,21 @@
 [
     {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_dark.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_plus_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_light.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_plus_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_light.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_plus_signin_btn_icon_light.xml"
+    },
+    {
         "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ready1.png",
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\ready1.png"
     },
@@ -8,8 +24,20 @@
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\ranking_background.png"
     },
     {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
         "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\title_background.png",
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\title_background.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish1.png",
@@ -24,6 +52,10 @@
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\redo.png"
     },
     {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_dark.xml",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.0\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
         "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\iroha.png",
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\iroha.png"
     },
@@ -32,12 +64,12 @@
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\ready2.png"
     },
     {
-        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish2.png",
-        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\finish2.png"
-    },
-    {
         "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\iroha_ok.png",
         "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\iroha_ok.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish2.png",
+        "source": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\src\\main\\res\\drawable\\finish2.png"
     },
     {
         "merged": "D:\\Android\\AndroidstudioProjects\\IrohaniNumber\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\game_background.png",

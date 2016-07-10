@@ -113,14 +113,15 @@
         android:text="得点"
         android:textStyle="bold" />
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:myapp="http://schemas.android.com/apk/res/org.example.irohaninumber"
-        android:id="@+id/linearLayout"
-        android:layout_width="fill_parent"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical" >
-    </LinearLayout>
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3217012767112748/8348877912">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>
