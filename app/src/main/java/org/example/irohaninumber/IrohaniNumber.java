@@ -19,7 +19,7 @@ import com.google.android.gms.ads.AdView;
 //import com.google.ads.AdView;
 
 public class IrohaniNumber extends Activity {
-	private AdView adView;
+	private AdView mAdView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class IrohaniNumber extends Activity {
         TextView text1 = (TextView)findViewById(R.id.textView1);
         text1.setTypeface(tf);
 
-		AdView mAdView = (AdView) findViewById(R.id.adView);
+		mAdView = (AdView) findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
 		//mAdView.setAdUnitId("ca-app-pub-3217012767112748/8348877912");
 		//mAdView.setAdSize(AdSize.BANNER);
@@ -160,7 +160,7 @@ public class IrohaniNumber extends Activity {
 
 	@Override
 	public void onDestroy() {
-		adView.destroy();
+		mAdView.destroy();
 		super.onDestroy();
 	}
 }

@@ -234,7 +234,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int ScrollView01=0x7f0a0013;
-        public static final int Tweet=0x7f0a001b;
+        public static final int Tweet=0x7f0a0019;
         public static final int adView=0x7f0a0012;
         public static final int adjust_height=0x7f0a0000;
         public static final int adjust_width=0x7f0a0001;
@@ -250,18 +250,16 @@ containing a value of this type.
         public static final int level3=0x7f0a0010;
         public static final int level3_score=0x7f0a0011;
         public static final int light=0x7f0a0008;
-        public static final int menu_settings=0x7f0a001c;
+        public static final int menu_settings=0x7f0a001a;
         public static final int none=0x7f0a0002;
         public static final int practice=0x7f0a000b;
         public static final int rankListView1=0x7f0a0018;
-        public static final int scoreSend=0x7f0a001a;
         public static final int standard=0x7f0a0004;
         public static final int textView1=0x7f0a0009;
         public static final int textView2=0x7f0a0014;
         public static final int timeView1=0x7f0a0017;
         public static final int titleView1=0x7f0a0016;
         public static final int wide=0x7f0a0005;
-        public static final int worldRank=0x7f0a0019;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;

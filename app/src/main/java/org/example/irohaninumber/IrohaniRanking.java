@@ -22,6 +22,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 //import com.google.ads.AdListener;
 //import com.google.ads.AdRequest;
 //import com.google.ads.Ad;
@@ -42,6 +45,7 @@ public class IrohaniRanking extends Activity{
 	private int sec;
 	private int dec;
 	private int world_score_flg;
+	private AdView mAdView;
 
 	//private String unitID = "ca-app-pub-3217012767112748/4715424317";
 	//private InterstitialAd interstitialAd;
@@ -64,6 +68,10 @@ public class IrohaniRanking extends Activity{
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 		ListView listView = (ListView) findViewById(R.id.rankListView1);
+
+		mAdView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		mAdView.loadAd(adRequest);
 
 		// インタースティシャルを作成する。
 		//interstitialAd = new InterstitialAd(this, unitID);
@@ -183,33 +191,6 @@ public class IrohaniRanking extends Activity{
 			}
 		});
 
-		// 世界順位ボタン
-		Button btnWorldRank = (Button)findViewById(R.id.worldRank);
-		btnWorldRank.setTypeface(tf);
-		btnWorldRank.setTextSize(20.0f);
-		btnWorldRank.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				//GFRankingController.show(IrohaniRanking.this, RANK_WORLD);
-			}
-		});
-
-		// 得点送信ボタン
-		Button btnScoreSend = (Button)findViewById(R.id.scoreSend);
-		btnScoreSend.setTypeface(tf);
-		btnScoreSend.setTextSize(20.0f);
-		btnScoreSend.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				if (rank_cnt > 0)
-				{
-					//スコア送信（ランキング用）
-					String[] gameIds = {RANK_WORLD};
-					String[] scores = {RANK_WORLD_SCORE};
-					//GFRankingController appController = GFRankingController.getIncetance(IrohaniRanking.this);
-					//appController.sendScore(gameIds, scores);
-				}
-			}
-		});
-
 		// ツイートする
 		ImageButton btnTweet = (ImageButton)findViewById(R.id.Tweet);
 		btnTweet.setOnClickListener(new View.OnClickListener() {
@@ -254,6 +235,7 @@ public class IrohaniRanking extends Activity{
 
 	@Override
 	public void onDestroy() {
+		mAdView.destroy();
 		super.onDestroy();
      }
 
